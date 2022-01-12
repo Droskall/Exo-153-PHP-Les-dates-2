@@ -51,13 +51,14 @@ echo $dateFebruary . "<br><br>";
 
 
 ##Exercice 7 Afficher la date du jour + 20 jours.
-echo date("d / m / Y", time() + 1728000);
-echo "<br><br>";
+
+$date = date('Y-m-d', strtotime('+20 day'));
+echo $date . "<br><br>";
 
 ##Exercice 8 Afficher la date du jour - 22 jours
 
-echo date("d / m / Y", time() - 1900800);
-echo "<br><br>";
+$date = date('Y-m-d',strtotime('-22 day'));
+echo $date . "<br><br>";
 
 
 ## TP Faire un formulaire avec deux listes déroulantes.
