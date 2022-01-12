@@ -64,27 +64,25 @@ echo "<br><br>";
 ## La première sert à choisir le mois, et le deuxième permet d'avoir l'année.
 # MEGA BONUS ( surligné et caractère gras :-)  ) : En fonction des choix, afficher un calendrier ( voir libs JS ou autres )
 
-?>
+echo '<form><SELECT name="d" Size="1">';
 
-    <select name="month" id="month">
-        <option value="Janvier">Janvier</option>
-        <option value="Février">Février</option>
-        <option value="Mars">Mars</option>
-        <option value="Avril">Avril</option>
-        <option value="Mai">Mai</option>
-        <option value="Juin">Juin</option>
-        <option value="Juillet">Juillet</option>
-        <option value="Août">Août</option>
-        <option value="Septembre">Septembre</option>
-        <option value="Octobre">Octobre</option>
-        <option value="Novembre">Novembre</option>
-        <option value="Décembre">Décembre</option>
-    </select>
-
-<?php
-
-echo "<select>";
-for ($i = date("Y"); $i > (date("Y") - 150); $i--){
-    echo "<option value='".$i."'>".$i."</option>";
+for($d=1; $d<=12;$d++){
+    if ($d < 10){
+        echo "<OPTION>0$d<br></OPTION>";
+    }
+    else {
+        echo "<OPTION>$d<br></OPTION>";
+    }
 }
-echo "</select>";
+
+echo "</SELECT>";
+
+$date = date('Y');
+
+echo '<SELECT name="y" Size="1">';
+
+for ($y=2000; $y<=$date; $y++) {
+    echo "<OPTION><br>$y<br></OPTION>";
+}
+
+echo "</SELECT></form>";
